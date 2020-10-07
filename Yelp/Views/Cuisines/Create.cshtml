@@ -1,0 +1,19 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Yelp.Models.Cuisine
+
+<h4>Add a new cuisine</h4>
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Name)
+    <hr>
+    @Html.TextBoxFor(model => model.Name)
+    <br>
+    <input type="submit" value="Add new cuisine" />
+}
+<p>@Html.ActionLink("Show all cuisines", "Index")</p>
+
+
+
