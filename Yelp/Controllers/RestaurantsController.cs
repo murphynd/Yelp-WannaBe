@@ -38,7 +38,7 @@ namespace Yelp.Controllers
 
     public ActionResult Details(int id)
     {
-      Restaurant thisRestaurant = _db.Restaurants.FirstOrDefault(restaurants => restaurants.RestaurantId == id);
+      Restaurant thisRestaurant = _db.Restaurants.Include(restaurant => restaurant.Reviews).FirstOrDefault(restaurants => restaurants.RestaurantId == id);
       return View(thisRestaurant);
     }
 
