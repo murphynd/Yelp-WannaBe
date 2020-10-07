@@ -8,7 +8,7 @@
 
 @using (Html.BeginForm())
 {
-    @Html.LabelFor(model => model.Description)
+    <p>Resturant Name</p>
     @Html.TextBoxFor(model => model.Description)
 
     @Html.LabelFor(model => model.Cuisine)
@@ -16,4 +16,5 @@
 
     <input type="submit" value="Add new restaurant" class="btn btn-default" />
 }
-<p>@Html.ActionLink("Show all restaurants", "Index")</p>
+<br>
+<Button>@Html.ActionLink("Show all restaurants", "Index")</Button>

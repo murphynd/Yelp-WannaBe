@@ -1,0 +1,22 @@
+@{
+  Layout = "_Layout";
+}
+@using Yelp.Models;
+@model List<Yelp.Models.Restaurant>;
+
+
+
+<h4>Search a Resturant</h4>
+
+
+    <p>What Resturant are you searching for?</p>
+    <form action="/Search" method="post">
+    <label for="searchString">Enter Search</label>
+    <input id="searchString" name="searchString" type="text">
+    <button type="submit">Go!</button>
+    </form>
+
+@* @foreach (Restaurant restaurant in Model)
+{
+  <li>@Html.ActionLink($"{restaurant.Description}")</li>
+} *@

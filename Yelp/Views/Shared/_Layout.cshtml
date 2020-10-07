@@ -4,14 +4,13 @@
     <meta charset="utf-8" />
     <title>Yelp</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
-    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'/>
-    <link rel='stylesheet' type="text/css"  href="~/css/styles.css"/>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
   </head>
-  <body style="font-family: 'Montserrat', sans-serif;">
+  <body style="font-family: 'Montserrat', sans-serif; ">
     <div class="container">
     <div class="w3-top">
     <div class="w3-bar" id="myNavbar">
@@ -21,10 +20,8 @@
     <button class="w3-bar-item w3-button"><i class="fa fa-heart"></i>@Html.ActionLink("Home", "Index", "Home")</button>
     <button class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-cutlery"></i>@Html.ActionLink("Cuisines", "Index","Cuisines")</button>
     <button class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> @Html.ActionLink("Restaurants", "Index","Restaurants")</button>
-    <button class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> @Html.ActionLink("See all reviews", "Index", "Reviews")</button>
-    <a href="/vendors/search" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
-      <i class="fa fa-search"></i>
-      </a>
+    <button class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-pencil-square-o"></i> @Html.ActionLink("See all reviews", "Index", "Reviews")</button>
+    <button class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red"><i class="fa fa-search">@Html.ActionLink("Search", "Index", "Search")</i></button>
       </div>
       </div>
       <br>

@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Threading.Tasks;
+using System;
 
 namespace Yelp.Controllers
 {
@@ -38,7 +40,7 @@ namespace Yelp.Controllers
 
     public ActionResult Details(int id)
     {
-      Restaurant thisRestaurant = _db.Restaurants.Include(restaurant => restaurant.Reviews).FirstOrDefault(restaurants => restaurants.RestaurantId == id);
+      Restaurant thisRestaurant = _db.Restaurants.Include(restaurant => restaurant.Reviews).FirstOrDefault(restaurant => restaurant.RestaurantId == id);
       return View(thisRestaurant);
     }
 
@@ -70,6 +72,24 @@ namespace Yelp.Controllers
       _db.Restaurants.Remove(thisRestaurant);
       _db.SaveChanges();
       return RedirectToAction("Index");
+    }
+
+    [HttpPost]
+    public ActionResult Search(string searchString)
+    {
+
+      if (!String.IsNullOrEmpty(searchString))
+      {
+        _db.Restaurants.Where(s => s.Description.Contains(searchString));
+      }
+      Console.WriteLine(searchString);
+
+      return View("Search");
+
+    }
+    public ActionResult Search()
+    {
+      return View();
     }
   }
 }

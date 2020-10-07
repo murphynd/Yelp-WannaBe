@@ -4,16 +4,19 @@
 
 @model Yelp.Models.Review
 
-<h4>Add a new task</h4>
+<h4>Add a new review</h4>
+<hr>
 
 @using (Html.BeginForm())
 {
-    @Html.LabelFor(model => model.Description)
-    @Html.TextBoxFor(model => model.Description)
-
-    @Html.LabelFor(model => model.Restaurant)
+    <p>Restaurant you're reviewing: </p>
     @Html.DropDownList("RestaurantId")
+    <br>
+    <br>
+    @Html.TextAreaFor(model => model.Description, new {cols = "55", rows = "10"})
+    <br>  
 
-    <input type="submit" value="Add new review" class="btn btn-default" />
+    <input type="submit" value="Add review" class="btn btn-default" style="width:40.5%;"/>
 }
-<p>@Html.ActionLink("Show all review", "Index")</p>
+<br>
+@Html.ActionLink("Show all reviews", "Index")
