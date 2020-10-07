@@ -61,9 +61,9 @@ Main Programs
 
 ### Other Links
 
-[GitHub for Natalie](https://github.com/murphynd)
-[GitHub for Grant](https://github.com/granteadie)
-[GitHub for Chloe](https://github.com/chloehellberg)
+- [GitHub for Natalie](https://github.com/murphynd)
+- [GitHub for Grant](https://github.com/granteadie)
+- [GitHub for Chloe](https://github.com/chloehellberg)
 
 ### License
 
