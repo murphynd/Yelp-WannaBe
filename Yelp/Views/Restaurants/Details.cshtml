@@ -12,11 +12,11 @@
   <p>no Reviews found</p>
 }
 <hr>
-<p style="font-size:20px; margin-left:-40px">reviews for this restaurant</p>
+<p style="font-size:20px; margin-left:-40px">Reviews for this restaurant</p>
 
 @foreach (Review review in @Model.Reviews)
 {
-  <li>@review.Description</li>
+  <li>"@review.Description"</li>
 }
 </ul>
 <hr>
