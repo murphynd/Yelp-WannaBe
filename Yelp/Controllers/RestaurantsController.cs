@@ -75,9 +75,9 @@ namespace Yelp.Controllers
       return RedirectToAction("Index");
     }
     [HttpPost] //restaurant search bar functionality
-    public ActionResult Index(string Description)
+    public ActionResult Index(string Search)
     {
-      List<Restaurant> model = _db.Restaurants.Include(restaurants => restaurants.Cuisine).Where(x => x.Description.Contains(Description)).ToList();
+      List<Restaurant> model = _db.Restaurants.Include(restaurants => restaurants.Cuisine).Where(x => x.Description.Contains(Search)).ToList();
       List<Restaurant> SortedList = model.OrderBy(o => o.Description).ToList();
       return View("Index", SortedList);
     }
