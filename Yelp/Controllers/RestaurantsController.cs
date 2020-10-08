@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Threading.Tasks;
 using System;
 
+
 namespace Yelp.Controllers
 {
   public class RestaurantsController : Controller
@@ -77,14 +78,21 @@ namespace Yelp.Controllers
     [HttpPost]
     public ActionResult Search(string searchString)
     {
+      Restaurant thisRestaurant = _db.Restaurants.FirstOrDefault(restaurants => restaurants.Description == searchString);
+      return View(thisRestaurant);
 
-      if (!String.IsNullOrEmpty(searchString))
-      {
-        _db.Restaurants.Where(s => s.Description.Contains(searchString));
-      }
-      Console.WriteLine(searchString);
 
-      return View("Search");
+
+
+
+      // Console.WriteLine(searchString);
+      // if (!String.IsNullOrEmpty(searchString))
+      // {
+      //   _db.Restaurants.Where(s => s.Description.Contains(searchString));
+      // }
+      // Console.WriteLine(searchString);
+
+      // return View("Search");
 
     }
     public ActionResult Search()

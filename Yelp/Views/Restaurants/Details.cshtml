@@ -4,20 +4,19 @@
 
 @using Yelp.Models;
 @model Yelp.Models.Restaurant;
-
-<h2>Resturant Details</h2>
-<hr />
-<h3>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)</h3>
+<h2>@Html.DisplayFor(model => model.Description)</h2>
 
 <ul>
 @if (@Model.Reviews.Count == 0)
 {
   <p>no Reviews found</p>
 }
+<hr>
+<p style="font-size:20px; margin-left:-40px">reviews for this restaurant</p>
 
 @foreach (Review review in @Model.Reviews)
 {
-  <li>Description: @review.Description</li>
+  <li>@review.Description</li>
 }
 </ul>
 <hr>
@@ -25,3 +24,4 @@
 <Button>@Html.ActionLink("Back to list", "Index")</Button>
 <Button>@Html.ActionLink("Edit Restaurant", "Edit", new { id = Model.RestaurantId })</button>
 <Button>@Html.ActionLink("Delete Restaurant", "Delete", new { id = Model.RestaurantId })</Button>
+<Button>@Html.ActionLink("Add new review", "Create","Reviews")</button>
