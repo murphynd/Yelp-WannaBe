@@ -74,30 +74,14 @@ namespace Yelp.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
-
-    [HttpPost]
-    public ActionResult Search(string searchString)
+    [HttpPost] //restaurant search bar functionality
+    public ActionResult Index(string Description)
     {
-      Restaurant thisRestaurant = _db.Restaurants.FirstOrDefault(restaurants => restaurants.Description == searchString);
-      return View(thisRestaurant);
-
-
-
-
-
-      // Console.WriteLine(searchString);
-      // if (!String.IsNullOrEmpty(searchString))
-      // {
-      //   _db.Restaurants.Where(s => s.Description.Contains(searchString));
-      // }
-      // Console.WriteLine(searchString);
-
-      // return View("Search");
-
+      List<Restaurant> model = _db.Restaurants.Include(restaurants => restaurants.Cuisine).Where(x => x.Description.Contains(Description)).ToList();
+      List<Restaurant> SortedList = model.OrderBy(o => o.Description).ToList();
+      return View("Index", SortedList);
     }
-    public ActionResult Search()
-    {
-      return View();
-    }
+
   }
 }
+
