@@ -7,7 +7,14 @@
 <h2>Review Details</h2>
 <hr />
 <h3>User Reviews </h3>
-<h5> - "@Html.DisplayFor(model => model.Description)"</h5>
+<ul>
+<li>
+  <h4>@Html.DisplayFor(model => model.UserName)</h4>
+  <h5> - "@Html.DisplayFor(model => model.Description)"</h5>
+  <img src="@Html.DisplayFor(model => model.UserImage)" height="50%" width="50%"/>
+</li>
+</ul>
 <button>@Html.ActionLink("Back to list", "Index")</button>
+
 <button>@Html.ActionLink("Edit Review", "Edit", new { id = Model.ReviewId })</button>
 <button>@Html.ActionLink("Delete Review", "Delete", new { id = Model.ReviewId })</button>

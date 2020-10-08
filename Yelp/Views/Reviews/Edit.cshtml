@@ -11,7 +11,8 @@
 @using (Html.BeginForm())
 {
     @Html.HiddenFor(model => model.ReviewId)
-
+    @Html.LabelFor(model => model.UserName)
+    @Html.EditorFor(model => model.UserName)
     @Html.LabelFor(model => model.Description)
     @Html.EditorFor(model => model.Description)
 

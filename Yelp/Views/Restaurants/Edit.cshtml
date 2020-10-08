@@ -11,9 +11,15 @@
 @using (Html.BeginForm())
 {
     @Html.HiddenFor(model => model.RestaurantId)
-
-    @Html.LabelFor(model => model.Description)
+    
+    <p>Type of Cuisine</p>
+    @Html.DropDownList("CuisineId")
+    <p>Resturant Name</p>
     @Html.EditorFor(model => model.Description)
+    <p>image Link of Resturant</p>
+    @Html.EditorFor(model => model.Image)
+    <p>Address of Resturant</p>
+    @Html.EditorFor(model => model.Address)
 
     @Html.LabelFor(model => model.Cuisine)
     @Html.DropDownList("CuisineId")

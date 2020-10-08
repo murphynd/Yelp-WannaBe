@@ -5,6 +5,9 @@
 @using Yelp.Models;
 @model Yelp.Models.Restaurant;
 <h2>@Html.DisplayFor(model => model.Description)</h2>
+<h3>@Html.DisplayFor(model => model.Address)</h3>
+
+<img src="@Html.DisplayFor(model => model.Image)" height="50%" width="50%"/>
 
 <ul>
 @if (@Model.Reviews.Count == 0)
@@ -17,6 +20,7 @@
 @foreach (Review review in @Model.Reviews)
 {
   <li>"@review.Description"</li>
+  <small> @review.UserName</small>
 }
 </ul>
 <hr>

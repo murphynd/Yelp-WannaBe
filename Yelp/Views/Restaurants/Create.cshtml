@@ -8,11 +8,17 @@
 
 @using (Html.BeginForm())
 {
+    <p>Type of Cuisine</p>
+    @Html.DropDownList("CuisineId")
     <p>Resturant Name</p>
     @Html.TextBoxFor(model => model.Description)
-
-    @Html.LabelFor(model => model.Cuisine)
-    @Html.DropDownList("CuisineId")
+    <p>image Link of Resturant</p>
+    @Html.TextBoxFor(model => model.Image)
+    <p>Address of Resturant</p>
+    @Html.TextBoxFor(model => model.Address)
+ 
+    <br>
+    <br>
 
     <input type="submit" value="Add new restaurant" class="btn btn-default" />
 }

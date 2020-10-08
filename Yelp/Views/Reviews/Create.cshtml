@@ -13,8 +13,18 @@
     @Html.DropDownList("RestaurantId")
     <br>
     <br>
+    <p>Enter Your Name</p>
+    @Html.TextBoxFor(model => model.UserName)
+    <br>
+    <h5>Review</h5>
     @Html.TextAreaFor(model => model.Description, new {cols = "55", rows = "10"})
     <br>  
+    <p>Add Image URL</p>
+    @Html.TextBoxFor(model => model.UserImage)
+    <br>
+    <br>
+
+    
 
     <input type="submit" value="Add review" class="btn btn-default" style="width:40.5%;"/>
 }
