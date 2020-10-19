@@ -6,7 +6,7 @@
 
 ## Description
 
-A website where you judge resturants
+A website where you judge resturants, kind of like Yelp in concept. 
 
 <!-- Brainstorming
 Best Restaurants
